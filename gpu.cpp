@@ -11,8 +11,8 @@
 #include "gpu_egl.h"
 #include "gpu_shader.h"
 #include "video_sync.h"
-#include "avm_gpu.h"
-#include "avm_gpu_table.h"
+#include "gpu.h"
+#include "gpu_table.h"
 //#include "minIni.h"
 #include "ini_config.h"
 
@@ -36,14 +36,14 @@
 
 #include "g2d.h"
 
-#define AVM_GPU_FUNC_SET(_val, type, _str)    \
+#define GPU_FUNC_SET(_val, type, _str)    \
     if (_val == NULL)    \
     {   \
         _val = (type)   \
             eglGetProcAddress(_str);    \
         if (_val == NULL)    \
         {   \
-            AVMGPU_ERR("AvmGpu::avm_gpu_env_init.Required extension not supported.\n");  \
+            GPU_ERR("Gpu::gpu_env_init.Required extension not supported.\n");  \
             return 1;   \
         }   \
     }
